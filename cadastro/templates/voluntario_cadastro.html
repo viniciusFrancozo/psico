@@ -1,0 +1,37 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%static 'cadastro/home.css'%}">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>elder.ly</title>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+
+        </header>
+
+        <div id="bg"></div>
+
+        <main>
+            <div class="container">
+                <section>
+                    <h2>Torne-se um <span class="elder-helper">Helper</span> gratuitamente!</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ user_form.as_p }}
+                        {{ form.as_p }}
+                    <button type="submit">Cadastrar</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

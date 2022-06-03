@@ -1,0 +1,58 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{%static 'cadastro/css.css'%}">
+    <link rel="stylesheet" href="{%static 'cadastro/style.css'%}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>elder.ly</title>
+</head>
+
+<body>
+    <header id="header">
+        <nav class="container">
+            <a class="logo" href="{% url 'index' %}">elder<span>.ly</span></a>
+                <div class="menu">
+                    <ul class="grid">
+                        {% if user.is_authenticated %}
+                            <li><a class="title" href="{% url 'consultar' %}">Marcar Consulta</a></li>
+                            <li><a class="title" href="">Verificar Agenda</a></li>
+                            <li>Olá, {{user.first_name}}</li>
+                        {% else %}
+                                <li><a class="title" href="{% url 'login' %}">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="toggle icon-menu"></div>
+                <div class="toggle icon-close"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section" id="home">
+            <div class="container grid">
+                <div class="image">
+                    <!-- hsl <img src="https://images.unsplash.com/photo-1454875392665-2ac2c85e8d3e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWxkZXJ8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+                    <img src="https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fGVsZGVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">-->
+                    <img src="https://images.unsplash.com/photo-1514425623522-e08e404b4a03?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fGVsZGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60">
+                </div>
+                <div class="text">
+                    <h2 class="title">Elder.ly é onde necessidades encontram ajuda!</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consequat leo lacinia varius auctor. Quisque nec justo vitae ex convallis porttitor et et turpis. Vestibulum interdum eu magna sed faucibus. Etiam at massa luctus augue eleifend rutrum. Nunc eu fringilla mauris. Pellentesque mattis faucibus molestie. Etiam ac risus ornare, vehicula dolor in, malesuada massa. Sed pretium ipsum tellus, quis placerat purus scelerisque in.</p>
+                    {% if not user.is_authenticated%}
+                    <a class="button" href="{% url 'cadastro' %}">cadastre-se!</a>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src='{% static "cadastro/main.js" %}'></script>
+</body>
+</html>
