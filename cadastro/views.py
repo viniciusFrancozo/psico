@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import PessoaForm, UsuarioForm, PsicologoForm
 from django.contrib.auth import login
 from .models import Pessoa, Psicologo
-
+import datetime as dt
 
 # Create your views here.
 
@@ -31,7 +31,9 @@ def index(request):
             'qs': qs,
             'role': 'V'
         }
-
+    context['mes'] = dt.datetime.now().month
+    context['ano'] = dt.datetime.now().year
+    print(context)
     return render(request, 'index.html', context)
 
 

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+<script type="text/javascript">
+    var collection = document.getElementsByClassName("evento");
+    for(let i=0; i<collection.length; i++){
+        collection[i].href="{% url 'calendario_visualizar' mes=mes ano=ano %}"
+    }
+  </script>
+{% block content %}
+
+{{cal|safe}}
+{%for i in dias%}
+    <script>
+        a = document.getElementById({{i.data.day}})
+        a.href="{%url 'calendario_visualizar' mes=mes ano=ano dia=i.data.day %}"
+    </script>
+{%endfor%}
+{% endblock %}
+

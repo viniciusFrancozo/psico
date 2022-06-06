@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Torne-se um <span class="elder-helper">Helper</span> gratuitamente!</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    <button type="submit">Cadastrar</button>
+                    </form>
 
 </body>
 </html>

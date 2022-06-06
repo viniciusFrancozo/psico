@@ -4,8 +4,8 @@ from .models import Account, Pessoa, Psicologo
 
 
 class AccountAdmin(UserAdmin):
-    list_display = ('email', 'username')
-    search_fields = ('email',)
+    list_display = ('email', 'username','id',)
+    search_fields = ('email','id',)
     fieldsets = (
         (None, {'fields': (
             'email',
@@ -28,8 +28,12 @@ class AccountAdmin(UserAdmin):
     filter_horizontal = ()
     filter_vertical = ()
 
-
-
 admin.site.register(Account, AccountAdmin)
-admin.site.register(Pessoa)
-admin.site.register(Psicologo)
+
+@admin.register(Pessoa)
+class ConsultasAdmin(admin.ModelAdmin):
+    list_display = ('pessoa_id',)
+
+@admin.register(Psicologo)
+class ConsultasAdmin(admin.ModelAdmin):
+    list_display = ('psicologo_id',)

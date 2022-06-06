@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Perfil de {{user.first_name}}.</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {%if user.cargo == 'PE'%}
+                            {%for i in consulta%}
+                                <input name="data" value="{{i.data|date:'d/m/Y'}}">
+                                <input name="horario" value="{{i.horario}}">
+                            {%endfor%}
+                                <input type=button value="voltar" onClick="javascript:history.go(-1);">
+                                <button type="submit">confirmar</button>
+                        {%else%}
+                            {%for i,y in consulta%}
+                                <input name="nome" value="{{y.first_name}}">
+                                <input name="data" value="{{i.data|date:'d/m/Y'}}">
+                                <input name="horario" value="{{i.horario}}">
+                            {%endfor%}
+                                <input type=button value="voltar" onClick="javascript:history.go(-1);">
+                        {%endif%}
+                    </form>
+</body>
+</html>

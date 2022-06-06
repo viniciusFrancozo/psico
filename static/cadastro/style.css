@@ -1,33 +1,209 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?cjpviv');
-  src:  url('fonts/icomoon.eot?cjpviv#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?cjpviv') format('truetype'),
-    url('fonts/icomoon.woff?cjpviv') format('woff'),
-    url('fonts/icomoon.svg?cjpviv#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+*{
+    padding:0px;
+    margin:0px;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#wrap{
+    background-color: #0D005E;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
-.icon-close:before {
-  content: "\e900";
+
+#wrap p{
+    font-size: 6em;
+    font-family: 'Baumans';
+    color: ghostwhite;
 }
-.icon-menu:before {
-  content: "\e901";
+
+#itens_wrap{
+    width: 50%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.cont_itens{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo{
+    background-color: #0D005E;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-family: 'Baumans';
+}
+
+.itens_cad{
+    height: 100%;
+    width: 70%;
+    background-color: #CCCCCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cadastro{
+    background-color: #a1a7a7;
+    width: 70%;
+    height: 80%;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    width: 60%;
+}
+
+.formulario button{
+    width: 50%;
+    height: 35px;
+    margin-left: 25%;
+    border-radius:7px;
+    border: none;
+    background-color: rgb(96, 119, 247);
+    color: #CCCCCC;
+}
+
+.formulario button a{
+    text-decoration: none;
+    color: #CCCCCC;
+}
+
+.formulario button:hover{
+    cursor:pointer;
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(68, 95, 250);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+input{
+    padding:5%;
+    margin-bottom: 5%;
+    border: none;
+    border-radius: 0.5em;
+    outline: none;
+}
+
+.crie{
+    display: flex;
+    justify-content: center;
+}
+
+.criarconta{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-family: 'Baumans';
+    font-size: 1.5em;
+    margin-bottom: 5%;
+}
+
+.voltar p{
+    margin-left: 43%;
+    margin-top: 2%;
+    font-family:'PT Sans', sans-serif;
+    text-decoration: underline;
+}
+
+.voltar a{
+    text-decoration: none;
+}
+
+.voltar p:hover{
+   color: #0D005E;
+   cursor: pointer;
+}
+
+.title{
+    color: antiquewhite;
+}
+
+#sucesso{
+    margin: auto;
+    font-family:'PT Sans', sans-serif;
+    font-size: 2.5em;
+}
+
+.sucesso_janela{
+    background-color: #8d9292;
+    width: 70%;
+    height: 80%;
+    border-radius:7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sucesso_janela button{
+    width: 50%;
+    height: 35px;
+    border-radius:7px;
+    margin-bottom: 5%;
+    border: none;
+    background-color: rgb(96, 119, 247);
+    color: #CCCCCC;
+}
+
+.sucesso_janela button a{
+   text-decoration: none;
+   color: white;
+}
+
+.sucesso_janela button:hover{
+    cursor:pointer;
+    transition: 0.2s;
+    color: white;
+    background-color: rgb(68, 95, 250);
+}
+
+#itens_wrap button{
+    border: none;
+    background-color: rgb(96, 119, 247);
+    color: #CCCCCC;
+    width: 150px;
+    height: 35px;   
+    border-radius:7px;
+    font-family:'PT Sans', sans-serif;
+}
+
+
+#itens_wrap button a{
+    text-decoration: none;
+    color: white;
+    font-family:'PT Sans', sans-serif;
+ }
+
+
+ #itens_wrap button:hover{
+     cursor:pointer;
+     transition: 0.2s;
+     color: white;
+     background-color: rgb(68, 95, 250);
+ }
