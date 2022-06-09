@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cadastro',
     'consultar',
-    'calendario'
+    'calendario',
+    'receita'
 ]
 
 MIDDLEWARE = [

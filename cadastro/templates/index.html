@@ -26,13 +26,20 @@
                <div class="formulario">
                    {% if user.is_authenticated %}
                    <div class="crie">
-                       <p class="criarconta">Seja bem vindo(a), Maria!</p><br>
+                       <p class="criarconta">Seja bem vindo(a), {{user.first_name}}!</p><br>
                     </div>
                     <div class="crie">
                         <p class="criarconta">Selecione a opção desejada.</p>
                      </div>
+                   {% if user.cargo == 'PE' %}
                    <button><a href="{% url 'consultar' %}">Marcar Consulta</a></button>
                    <br>
+                   {% else %}
+                   <button><a href="{% url 'receita' %}">Imprimir Receita</a></button>
+                   <br>
+                   <button><a href="{% url 'remedio' %}">Cadastrar Remedio</a></button>
+                   <br>
+                   {% endif %}
                    <button><a href="{% url 'calendario' mes=mes ano=ano %}">Verificar Agenda</a></button>
                    <div class="voltar"><a href="{% url 'logout' %}"><p>Sair</p></a></div>
                    {% else %}
@@ -57,8 +64,8 @@
                               <p>Psico.io</p>
                               <div id="itens_wrap">
                                   <div class="wrapp">
-                                    <button><a href="login.html">ENTRAR</a></button>
-                                    <button><a href="cadastro.html">CADASTRAR</a></button>
+                                    <button><a href=" {% url 'login' %} ">ENTRAR</a></button>
+                                    <button><a href=" {% url 'cadastro' %} ">CADASTRAR</a></button>
                                   </div>
                               </div>
                             </div>

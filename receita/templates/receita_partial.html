@@ -1,0 +1,9 @@
+{% if remedio %}
+    <ul>
+        {% for remedio in remedio %}
+        <li>{{ remedio.nome }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Não há remedios com esse nome.</p>
+{% endif %}

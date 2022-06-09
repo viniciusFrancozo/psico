@@ -1,11 +1,70 @@
+styles.css
+Quem pode acessar
+
+Propriedades do sistema
+Tipo
+Folha de estilo
+Tamanho
+1 KB
+Armazenamento usado
+1 KB
+Local
+calendario
+Proprietário
+Maria Eduarda Santos
+Modificado
+00:48 por Maria Eduarda Santos
+Aberto
+18:43 por mim
+Criado em
+6 de jun. de 2022
+Sem descrição
+Os leitores podem fazer o download
+body{
+  background-color: #CCCCCC;
+}
+
+.agenda{
+  width: 100%;
+  height: 15vh;
+  background-color: #0D005E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agenda2{
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agenda p{
+  font-family: 'Baumans';
+  color: azure;
+  font-size: 2.5em;
+}
+
+.agenda2 p{
+  font-family: 'PT Sans';
+  color: black;
+  font-size: 2em;
+}
+
 .calendar {
-  width: 98%;
+  width: 70%;
   margin: auto;
-  font-size: 13px;
+  margin-top: 2%;
+  font-size: 15px;
+  background-color: #ffff;
+  margin-bottom: 3%;
 }
 
 .calendar tr, .calendar td {
-  border: 1px solid black;
+  border: 1px solid rgba(224, 222, 222, 0.8);
+  text-align: left;
 }
 
 .calendar th {
@@ -16,7 +75,7 @@
 
 .calendar td {
   width: 200px;
-  height: 150px;
+  height: 100px;
   padding: 20px 0px 0px 5px;
 }
 
@@ -35,4 +94,21 @@ ul {
 
 a {
   color: #17a2b8;
+}
+
+.evento{
+  background-color: black;
+  color: #ffff;
+  padding: 3%;
+}
+
+.evento:hover{
+  text-decoration: none;
+  color: #5768ff;
+  transition: 0.2s;
+}
+
+th.month{
+  background-color: black;
+  color: #ffff;
 }

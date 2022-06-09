@@ -1,36 +1,41 @@
 {%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{%static 'cadastro/home.css'%}">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-
     <meta charset="UTF-8">
-    <title>elder.ly</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'cadastro/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&family=PT+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
-
 <body>
-    <div class="content">
-        <header></header>
-
-        <div id="bg"></div>
-
-        <main>
-            <div class="container">
-                <section>
-                    <h2>Seja bem-vindo de volta!</h2>
-                    <form method="POST">
-                        {% csrf_token %}
+    <div class="cont_itens">
+       <div class="logo">
+        <div class="title">
+            <p class="titulo">Psico.io</p>
+        </div>
+       </div>
+       <div class="itens_cad">
+           <div class="cadastro">
+               <div class="formulario">
+                   <div class="crie"> <p class="criarconta">Conecte-se a sua conta</p></div>
+                   <form method="POST">
+                       {% csrf_token %}
                         <input type="email" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="60" required="" id="id_username" placeholder="E-mail">
                         <input type="password" name="password" autocomplete="current-password" required="" id="id_password" placeholder="Senha">
                         {{form.non_field_errors}}
-                        <button type="submit">entrar</button>
-                    </form>
-                </section>
-            </div>
-        </main>
+                        <button><a type="submit">Entrar</a></button>
+                   </form>
+                   <div class="voltar"><a href="{% url 'index' %}"><p>Voltar</p></a></div>
+               </div>
+           </div>
+       </div>
     </div>
 </body>
 </html>

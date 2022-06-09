@@ -83,28 +83,17 @@ class Pessoa(models.Model):
     # one-to-one link with the Account model (used to create a "profile" for the Account model)
     pessoa = models.OneToOneField(Account, on_delete=models.CASCADE)
 
-    # Voluntario data for serving
-    agenda = models.CharField(max_length=10,
-        choices=(
-            ('', 'Seu Horário Preferido'),
-            ('MANHA', 'Manhã'),
-            ('TARDE', 'Tarde'),
-            ('NOITE', 'Noite'),
-            ('ANY', 'Qualquer Horário')
-        ), default=''
-    )
-    disponivel = models.BooleanField(default=True)
+
 
     def __str__(self):
-        return self.pessoa.email
+        return self.pessoa.first_name
 
 
 class Psicologo(models.Model):
     # one-to-one link with the Account model (used to create a "profile" for the Account model)
     psicologo = models.OneToOneField(Account, on_delete=models.CASCADE)
 
-    # Voluntario data for serving
-    em_atendimento = models.BooleanField(default=False)
+
 
     def __str__(self):
         return self.psicologo.email

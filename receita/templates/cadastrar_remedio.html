@@ -11,13 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baumans&family=PT+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>Cadastro</title>
-    <style>
-        select{
-    width: 100%;
-
-}
-    </style>
+    <title>Document</title>
 </head>
 <body>
     <div class="cont_itens">
@@ -29,14 +23,13 @@
        <div class="itens_cad">
            <div class="cadastro">
                <div class="formulario">
-                   <div class="crie"> <p class="criarconta">Crie sua conta</p></div>
+                   <div class="crie"> <p class="criarconta">Imprimir Receita</p></div>
                    <form method="POST">
                         {% csrf_token %}
-                        {{ user_form.as_p }}
                         {{ form.as_p }}
-                   <button><a type="submit">CADASTRAR</a></button>
+                        <button><a type="submit">Confirmar</a></button>
+                    </form>
                    <div class="voltar"><a href="{% url 'index' %}"><p>Voltar</p></a></div>
-                   </form>
                </div>
            </div>
        </div>
